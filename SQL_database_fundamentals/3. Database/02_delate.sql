@@ -1,0 +1,1 @@
+DROP DATABASE fundamentos_base_datos;
