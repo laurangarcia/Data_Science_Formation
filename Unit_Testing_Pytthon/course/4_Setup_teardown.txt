@@ -1,0 +1,30 @@
+Las pruebas unitarias en Python son esenciales para asegurar el correcto funcionamiento del código. Utilizando la clase TestCase de la biblioteca UnitTest, podemos estructurar pruebas de manera eficiente y limpiar recursos una vez que se han ejecutado. Además, permite automatizar la validación de resultados y la captura de errores. Vamos a profundizar en cómo implementar estas pruebas y algunos métodos clave que facilitan este proceso.
+
+¿Cómo configurar las pruebas en Python con TestCase?
+El método setUp() nos permite configurar elementos antes de que cada prueba se ejecute. Imagina que tienes cinco pruebas que requieren la misma preparación: en lugar de repetir la configuración, puedes ejecutarla una sola vez aquí. Esto ahorra tiempo y esfuerzo al evitar la duplicación de código.
+
+Por ejemplo:
+
+Puedes utilizar setUp() para crear una base común de datos, abrir archivos, o preparar datos de entrada.
+Luego, cada prueba reutiliza esta configuración, asegurando que el entorno siempre esté listo para las pruebas.
+¿Cómo limpiar después de una prueba?
+El método tearDown() sirve para limpiar los recursos utilizados en la prueba. Supongamos que has creado cientos de archivos para una prueba, este método permite eliminarlos automáticamente después de que la prueba finaliza, asegurando que el sistema no quede lleno de datos innecesarios.
+
+Algunos ejemplos de cuándo usarlo:
+
+Eliminar archivos temporales creados durante las pruebas.
+Cerrar conexiones a bases de datos o liberar recursos del sistema.
+¿Cómo ejecutar pruebas y capturar errores?
+La clase TestCase no solo organiza las pruebas, también proporciona un método automático para ejecutar cada una de ellas. El método runTest() gestiona la ejecución de las pruebas, captura los errores y valida que todo funcione correctamente. Este proceso automatiza la validación de resultados esperados y la identificación de fallos.
+
+Por ejemplo:
+
+Si tienes una lista de pruebas, este método las ejecutará una por una, asegurando que todas se validen correctamente.
+Además, capturará las excepciones que se lancen durante la ejecución.
+¿Cómo validar excepciones en las pruebas unitarias?
+Una situación común en las pruebas de una calculadora es manejar la división por cero. La mejor práctica es lanzar una excepción para evitar errores. Python permite validar que la excepción se ha lanzado correctamente en las pruebas.
+
+Pasos clave:
+
+Crear una prueba donde b = 0.
+Utilizar assertRaises() para verificar que se ha lanzado la excepción ValueError.

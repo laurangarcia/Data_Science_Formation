@@ -1,0 +1,24 @@
+La simulación de servicios externos es crucial en proyectos de software para garantizar que las pruebas no dependan de APIs externas. Para lograrlo, utilizamos los Mocks, que permiten evitar las llamadas reales a servicios y, en cambio, retornan respuestas controladas en nuestras pruebas. En este caso, aprenderemos a mockear una API de geolocalización y a realizar pruebas efectivas.
+
+¿Qué es un Mock y cómo nos ayuda?
+Un Mock es una herramienta que nos permite simular comportamientos de funciones o servicios externos. En lugar de ejecutar una llamada real a una API, podemos definir una respuesta predefinida, lo que permite:
+
+Evitar depender de servicios externos en pruebas.
+Acelerar la ejecución de las pruebas.
+Controlar los resultados esperados.
+¿Cómo integramos una API externa en Python?
+Primero, se configura una función que recibe la IP del cliente y devuelve la ubicación mediante una API de terceros. Para hacer esto:
+
+Se instala la librería requests con pip install requests.
+Se crea un archivo api_client.py donde conectamos con la API utilizando requests.get.
+Al recibir la respuesta, se convierte el resultado a JSON para obtener la información de país, ciudad y región.
+¿Cómo probamos sin hacer llamadas reales?
+El problema principal de las pruebas de integraciones con APIs es que pueden demorar, ya que las respuestas dependen de factores externos. Para evitar esto, se usan Mocks. A través del decorador @patch de unittest.mock, podemos interceptar la llamada a la API y retornar datos predefinidos.
+
+Pasos a seguir:
+
+Decorar la función de prueba con @patch.
+Simular el valor retornado usando mock.return_value para definir qué debe devolver la llamada a la API.
+Definir tanto el código de estado como el contenido del JSON que esperamos recibir.
+¿Cómo validar que nuestra simulación funciona correctamente?
+Además de simular respuestas, debemos asegurarnos de que las pruebas validen correctamente los llamados. Se puede usar assertCalledOnceWith para garantizar que la URL y los parámetros pasados son los correctos.

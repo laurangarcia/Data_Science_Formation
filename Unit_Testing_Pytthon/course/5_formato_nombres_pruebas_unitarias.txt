@@ -1,0 +1,34 @@
+Resumen
+
+Nombrar pruebas correctamente es clave para el éxito en equipo, facilitando la comprensión del código y la colaboración efectiva. Aunque no es obligatorio, tener un formato claro para las pruebas es muy beneficioso.
+
+¿Cómo definir el formato de los nombres de las pruebas?
+Todos los tests deben agruparse en clases, cada una relacionada con una clase de tu proyecto. Por ejemplo, si tienes una clase llamada BankAccount, la clase de prueba debería llamarse BankAccountTest.
+Cada prueba debe comenzar con test_, para que las herramientas de testing la identifiquen fácilmente.
+El siguiente elemento en el nombre debe ser el método que estás probando. Si es un método deposit, el nombre sería test_deposit_.
+
+¿Cómo estructurar el escenario de la prueba?
+Después del método, añade el escenario. Esto se refiere a los valores o parámetros que usas en la prueba. Por ejemplo, en el caso de un valor positivo en un depósito, el escenario sería positive_amount.
+
+¿Cómo describir el resultado esperado?
+Para finalizar el nombre, indica el resultado esperado. Si el depósito incrementa el saldo, añade algo como increase_balance. Así, un nombre de prueba completo sería: test_deposit_positive_amount_increase_balance.
+
+¿Por qué es útil este formato?
+Permite a cualquier miembro del equipo entender el propósito de la prueba sin revisar el código completo.
+Facilita el mantenimiento del código y el soporte, ya que con solo leer el nombre, se entiende el objetivo de la prueba.
+
+¿Qué reto se propone para mejorar las pruebas actuales?
+Refactoriza las pruebas que has creado, probando diferentes escenarios y resultados posibles.
+Imagina nuevas circunstancias para probar el código.
+Compara tus resultados con el proyecto refactorizado que estará disponible en la sección de recursos, y comparte tus ideas.
+
+Estructura sugerida:
+
+test_MétodoProbado_escenario_ResultadoEsperado
+
+Ejemplo de la clase:
+
+Método probado: deposit
+escenario: positive amount
+resultado esperado: increase balance
+test_deposit_positive_amount_increase_balance
